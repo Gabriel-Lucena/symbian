@@ -21,7 +21,7 @@
 
 
         <EditText
-            android:id="@+id/txtCEPEnderecoCadastro"
+            android:id="@+id/CadastroEndereco_txtCep"
             style="@style/CadastroEndereco_editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -30,7 +30,7 @@
 
 
         <EditText
-            android:id="@+id/txtNumeroEnderecoCadastro"
+            android:id="@+id/CadastroEndereco_txtNumero"
             style="@style/CadastroEndereco_editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -38,12 +38,19 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/txtComplementoEnderecoCadastro"
+            android:id="@+id/CadastroEndereco_txtComplemento"
             style="@style/CadastroEndereco_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/CadastroEndereco_complemento"
             android:inputType="text" />
+
+        <Button
+            android:id="@+id/CadastroEndereco_btnCadastrar"
+            style="@style/CadastroEndereco_buttonCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CadastroEndereco_buttonCadastrar" />
 
     </LinearLayout>
 

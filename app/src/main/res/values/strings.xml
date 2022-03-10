@@ -6,9 +6,11 @@
     <string name="CadastroUsuario_sobrenome">Sobrenome</string>
     <string name="CadastroUsuario_login">Login</string>
     <string name="CadastroUsuario_senha">Senha</string>
+    <string name="CadastroUsuario_buttonCadastrar">Cadastrar Usuário</string>
 
     <string name="CadastroEndereco_cep">Código Postal</string>
     <string name="CadastroEndereco_titulo">Cadastro de Endereço</string>
     <string name="CadastroEndereco_numero">Número</string>
     <string name="CadastroEndereco_complemento">Complemento</string>
+    <string name="CadastroEndereco_buttonCadastrar">Cadastrar Endereço</string>
 </resources>

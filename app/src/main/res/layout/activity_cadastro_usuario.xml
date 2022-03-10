@@ -20,7 +20,7 @@
             android:text="@string/CadastroUsuario_titulo" />
 
         <EditText
-            android:id="@+id/txtNomeUsuarioCadastro"
+            android:id="@+id/CadastroUsuario_txtNome"
             style="@style/CadastroUsuario_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/txtSobrenomeUsuarioCadastro"
+            android:id="@+id/CadastroUsuario_txtSobrenome"
             style="@style/CadastroUsuario_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/txtLoginUsuarioCadastro"
+            android:id="@+id/CadastroUsuario_txtLogin"
             style="@style/CadastroUsuario_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,12 +44,19 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/txtSobrenome"
+            android:id="@+id/CadastroUsuario_txtSenha"
             style="@style/CadastroUsuario_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/CadastroUsuario_senha"
             android:inputType="text" />
+
+        <Button
+            android:id="@+id/CadastroUsuario_btnCadastrar"
+            style="@style/CadastroUsuario_buttonCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CadastroUsuario_buttonCadastrar" />
 
     </LinearLayout>
 
