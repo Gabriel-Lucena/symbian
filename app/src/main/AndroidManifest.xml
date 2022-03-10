@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Symbian">
         <activity
+            android:name=".CadastroEndereco"
+            android:exported="false" />
+        <activity
             android:name=".CadastroUsuario"
             android:exported="false" />
         <activity

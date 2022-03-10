@@ -14,41 +14,41 @@
         tools:context=".activity_cadastro_usuario">
 
         <TextView
-            style="@style/cadastroUsuario_titulo"
+            style="@style/CadastroUsuario_titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/cadastroUsuario_titulo" />
+            android:text="@string/CadastroUsuario_titulo" />
 
         <EditText
             android:id="@+id/txtNomeUsuarioCadastro"
-            style="@style/cadastroUsuario_editText"
+            style="@style/CadastroUsuario_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cadastroUsuario_nome"
+            android:hint="@string/CadastroUsuario_nome"
             android:inputType="text" />
 
         <EditText
             android:id="@+id/txtSobrenomeUsuarioCadastro"
-            style="@style/cadastroUsuario_editText"
+            style="@style/CadastroUsuario_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cadastroUsuario_sobrenome"
+            android:hint="@string/CadastroUsuario_sobrenome"
             android:inputType="text" />
 
         <EditText
             android:id="@+id/txtLoginUsuarioCadastro"
-            style="@style/cadastroUsuario_editText"
+            style="@style/CadastroUsuario_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cadastroUsuario_login"
+            android:hint="@string/CadastroUsuario_login"
             android:inputType="text" />
 
         <EditText
             android:id="@+id/txtSobrenome"
-            style="@style/cadastroUsuario_editText"
+            style="@style/CadastroUsuario_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cadastroUsuario_senha"
+            android:hint="@string/CadastroUsuario_senha"
             android:inputType="text" />
 
     </LinearLayout>

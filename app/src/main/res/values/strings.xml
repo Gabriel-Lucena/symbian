@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">Symbian</string>
-    <string name="cadastroUsuario_titulo">Cadastro de Usuário</string>
-    <string name="cadastroUsuario_nome">Nome</string>
-    <string name="cadastroUsuario_sobrenome">Sobrenome</string>
-    <string name="cadastroUsuario_login">Login</string>
-    <string name="cadastroUsuario_senha">Senha</string>
+
+    <string name="CadastroUsuario_titulo">Cadastro de Usuário</string>
+    <string name="CadastroUsuario_nome">Nome</string>
+    <string name="CadastroUsuario_sobrenome">Sobrenome</string>
+    <string name="CadastroUsuario_login">Login</string>
+    <string name="CadastroUsuario_senha">Senha</string>
+
+    <string name="CadastroEndereco_cep">Código Postal</string>
+    <string name="CadastroEndereco_titulo">Cadastro de Endereço</string>
+    <string name="CadastroEndereco_numero">Número</string>
+    <string name="CadastroEndereco_complemento">Complemento</string>
 </resources>
