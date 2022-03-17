@@ -7,10 +7,15 @@
     <string name="CadastroUsuario_login">Login</string>
     <string name="CadastroUsuario_senha">Senha</string>
     <string name="CadastroUsuario_buttonCadastrar">Cadastrar Usuário</string>
+    <string name="CadastroUsuario_mensagem">Você está cadastrando o usuário</string>
 
     <string name="CadastroEndereco_cep">Código Postal</string>
     <string name="CadastroEndereco_titulo">Cadastro de Endereço</string>
     <string name="CadastroEndereco_numero">Número</string>
     <string name="CadastroEndereco_complemento">Complemento</string>
     <string name="CadastroEndereco_buttonCadastrar">Cadastrar Endereço</string>
+    <string name="salvar">Salvar</string>
+    <string name="CadastroUsuario_insercao">Cadastro realizado com sucesso!</string>
+    <string name="CadastroUsuario_insercaoErro">Houve um erro ao realizar o cadastro de usuário!</string>
+    <string name="CadastroUsuario_cancelarInsercao">Cancelar</string>
 </resources>
