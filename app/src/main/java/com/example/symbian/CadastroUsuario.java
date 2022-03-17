@@ -1,5 +1,6 @@
 package com.example.symbian;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,51 +37,57 @@ public class CadastroUsuario extends AppCompatActivity {
         btnCadastrarUsuario.setOnClickListener(view -> {
 
 
-            if (!validate()) {
+            if (validate()) {
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Deu bom", Toast.LENGTH_SHORT).show();
+
+
+                AlertDialog dialog = new AlertDialog.Builder(this)
+                        .setTitle(getString(R.string.CadastroUsuario_titulo))
+                        .setMessage(getString(R.string.CadastroEndereco_buttonCadastrar))
+                        .setPositiveButton(R.string.salvar, (dialog1, which) -> {
+
+                            /*
+                             * Ação do botão positivo
+                             */
+
+                            String nomeUsuario = txtNomeUsuario.getText().toString();
+                            String sobrenomeUsuario = txtSobrenomeUsuario.getText().toString();
+                            String loginUsuario = txtLoginUsuario.getText().toString();
+                            String senhaUsuario = txtSenhaUsuario.getText().toString();
+
+                            boolean cadastrarUsuario = SQLHelper.getINSTANCE(this).addUser(nomeUsuario, sobrenomeUsuario, loginUsuario, senhaUsuario);
+
+                            if (cadastrarUsuario) {
+
+                                Toast.makeText(this,
+                                        getString(R.string.CadastroUsuario_insercao),
+                                        Toast.LENGTH_LONG).show();
+
+                                Intent activityCadastroEndereco = new Intent(this, CadastroEndereco.class);
+                                startActivity(activityCadastroEndereco);
+
+                            } else {
+
+                                Toast.makeText(this,
+                                        getString(R.string.CadastroUsuario_insercaoErro),
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        }).setNegativeButton(getString(R.string.CadastroUsuario_cancelarInsercao), (dialog1, which) -> {
+
+
+                            /*
+                             * Ação do negative button
+                             */
+
+                        }).create();
+
+
+                dialog.show();
+
             }
 
-            AlertDialog dialog = new AlertDialog.Builder(this)
-                    .setTitle(getString(R.string.CadastroUsuario_titulo))
-                    .setMessage(getString(R.string.CadastroEndereco_buttonCadastrar))
-                    .setPositiveButton(R.string.salvar, (dialog1, which) -> {
-
-                        /*
-                         * Ação do botão positivo
-                         */
-
-                        String nomeUsuario = txtNomeUsuario.getText().toString();
-                        String sobrenomeUsuario = txtSobrenomeUsuario.getText().toString();
-                        String loginUsuario = txtLoginUsuario.getText().toString();
-                        String senhaUsuario = txtSenhaUsuario.getText().toString();
-
-                        boolean cadastrarUsuario = SQLHelper.getINSTANCE(this).addUser(nomeUsuario, sobrenomeUsuario, loginUsuario, senhaUsuario);
-
-                        if (cadastrarUsuario) {
-
-                            Toast.makeText(this,
-                                    getString(R.string.CadastroUsuario_insercao),
-                                    Toast.LENGTH_LONG).show();
-
-                        } else {
-
-                            Toast.makeText(this,
-                                    getString(R.string.CadastroUsuario_insercaoErro),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }).setNegativeButton(getString(R.string.CadastroUsuario_cancelarInsercao), (dialog1, which) -> {
-
-
-                        /*
-                         * Ação do negative button
-                         */
-
-                    }).create();
-
-
-            dialog.show();
 
         });
 
@@ -88,15 +95,11 @@ public class CadastroUsuario extends AppCompatActivity {
 
     private boolean validate() {
 
+        return txtNomeUsuario.getText().toString().isEmpty() ||
+                txtSobrenomeUsuario.getText().toString().isEmpty() ||
+                txtLoginUsuario.getText().toString().isEmpty() ||
+                txtSenhaUsuario.getText().toString().isEmpty();
 
-        return (
-
-                !txtNomeUsuario.getText().toString().isEmpty() &&
-                        !txtSobrenomeUsuario.getText().toString().isEmpty() &&
-                        !txtLoginUsuario.getText().toString().isEmpty() &&
-                        !txtSenhaUsuario.getText().toString().isEmpty()
-
-        );
 
     }
 
