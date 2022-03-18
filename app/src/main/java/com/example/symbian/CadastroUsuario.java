@@ -45,7 +45,7 @@ public class CadastroUsuario extends AppCompatActivity {
 
                 AlertDialog dialog = new AlertDialog.Builder(this)
                         .setTitle(getString(R.string.CadastroUsuario_titulo))
-                        .setMessage(getString(R.string.CadastroEndereco_buttonCadastrar))
+                        .setMessage(getString(R.string.CadastroUsuario_buttonCadastrar))
                         .setPositiveButton(R.string.salvar, (dialog1, which) -> {
 
                             /*
@@ -65,8 +65,8 @@ public class CadastroUsuario extends AppCompatActivity {
                                         getString(R.string.CadastroUsuario_insercao),
                                         Toast.LENGTH_LONG).show();
 
-                                Intent activityCadastroEndereco = new Intent(this, CadastroEndereco.class);
-                                startActivity(activityCadastroEndereco);
+                                Intent activityCadastroCadastro = new Intent(this, CadastroUsuario.class);
+                                startActivity(activityCadastroCadastro);
 
                             } else {
 
@@ -74,6 +74,7 @@ public class CadastroUsuario extends AppCompatActivity {
                                         getString(R.string.CadastroUsuario_insercaoErro),
                                         Toast.LENGTH_LONG).show();
                             }
+
                         }).setNegativeButton(getString(R.string.CadastroUsuario_cancelarInsercao), (dialog1, which) -> {
 
 
