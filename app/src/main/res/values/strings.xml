@@ -22,5 +22,9 @@
     <string name="CadastroEndereco_insercao">Você está cadastrando o endereço</string>
 
     <string name="salvar">Salvar</string>
+    <string name="LoginUsuario_titulo">Login</string>
+    <string name="LoginUsuario_login">Login</string>
+    <string name="LoginUsuario_senha">Senha</string>
+    <string name="LoginUsuario_buttonLogar">Entrar</string>
 
 </resources>

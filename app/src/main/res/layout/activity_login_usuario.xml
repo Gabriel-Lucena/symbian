@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginUsuario">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".activity_login_usuario">
+
+        <TextView
+            style="@style/LoginUsuario_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/LoginUsuario_titulo" />
+
+        <EditText
+            android:id="@+id/LoginUsuario_txtLogin"
+            style="@style/LoginUsuario_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/LoginUsuario_login"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/LoginUsuario_txtSenha"
+            style="@style/LoginUsuario_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/LoginUsuario_senha"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/LoginUsuario_btnLogar"
+            style="@style/LoginUsuario_buttonLogar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/LoginUsuario_buttonLogar" />
+
+    </LinearLayout>
+
+</ScrollView>
