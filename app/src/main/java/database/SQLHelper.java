@@ -2,6 +2,7 @@ package database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -103,6 +104,46 @@ public class SQLHelper extends SQLiteOpenHelper {
                 sqLiteDatabase.endTransaction();
 
             }
+        }
+
+    }
+
+
+    public int getUser(String login, String senha) {
+
+        /*
+         * Configurando o SQLITE para a escrita:
+         */
+
+        SQLiteDatabase SQLiteDatabase = getReadableDatabase();
+
+        try (
+                Cursor cursor = SQLiteDatabase.rawQuery(
+                "select idUsuario from tblUsuario where login = '" + login + "'" +
+                        " and senha = '" + senha + "'"
+                , null)) {
+
+
+            cursor.moveToFirst();
+
+            cursor.close();
+
+            return Integer.parseInt(cursor.getString(0));
+
+        } catch (Exception e) {
+
+            Log.d("SQLite - ", e.getMessage());
+
+            return 0;
+
+        } finally {
+
+            if (SQLiteDatabase.isOpen()) {
+
+                SQLiteDatabase.endTransaction();
+
+            }
+
         }
 
     }

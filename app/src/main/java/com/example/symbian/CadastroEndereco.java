@@ -30,6 +30,8 @@ public class CadastroEndereco extends AppCompatActivity {
          * Listener
          */
 
+        btnCadastrarEndereco = findViewById(R.id.CadastroEndereco_btnCadastrar);
+
         btnCadastrarEndereco.setOnClickListener(view -> {
             if (validate()) {
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
@@ -46,10 +48,13 @@ public class CadastroEndereco extends AppCompatActivity {
                              */
 
                             String cepEndereco = txtCep.getText().toString();
-                            String numeroEndereco = txtNumero.getText().toString(); // Precisa ser um inteiro
+                            int numeroEndereco = Integer.parseInt(txtNumero.getText().toString());
                             String complementoEndereco = txtComplemento.getText().toString();
-                                                                                                    // Trazer o id da activity de usuário
-                            boolean cadastrarEndereco = SQLHelper.getINSTANCE(this).addAddress(1, cepEndereco, numeroEndereco, complementoEndereco);
+
+                            Bundle extras = getIntent().getExtras();
+                            int idUsuario = extras.getInt("idUsuario");
+
+                            boolean cadastrarEndereco = SQLHelper.getINSTANCE(this).addAddress(idUsuario, cepEndereco, numeroEndereco, complementoEndereco);
 
                         }).setNegativeButton(getString(R.string.CadastroUsuario_cancelarInsercao), (dialog1, which) -> {
 

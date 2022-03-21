@@ -45,7 +45,7 @@ public class CadastroUsuario extends AppCompatActivity {
 
                 AlertDialog dialog = new AlertDialog.Builder(this)
                         .setTitle(getString(R.string.CadastroUsuario_titulo))
-                        .setMessage(getString(R.string.CadastroUsuario_buttonCadastrar))
+                        .setMessage(getString(R.string.CadastroUsuario_mensagem))
                         .setPositiveButton(R.string.salvar, (dialog1, which) -> {
 
                             /*
@@ -59,14 +59,20 @@ public class CadastroUsuario extends AppCompatActivity {
 
                             boolean cadastrarUsuario = SQLHelper.getINSTANCE(this).addUser(nomeUsuario, sobrenomeUsuario, loginUsuario, senhaUsuario);
 
+
+//                            int idUsuario = SQLHelper.getINSTANCE(this).getUser(loginUsuario, senhaUsuario);
+
+                            int idUsuario = 1; // id de teste
+
                             if (cadastrarUsuario) {
 
                                 Toast.makeText(this,
                                         getString(R.string.CadastroUsuario_insercao),
                                         Toast.LENGTH_LONG).show();
 
-                                Intent activityCadastroCadastro = new Intent(this, CadastroUsuario.class);
-                                startActivity(activityCadastroCadastro);
+                                Intent activityCadastroEndereco = new Intent(this, CadastroEndereco.class);
+                                activityCadastroEndereco.putExtra("idUsuario", idUsuario);
+                                startActivity(activityCadastroEndereco);
 
                             } else {
 
