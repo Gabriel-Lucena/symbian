@@ -72,7 +72,7 @@ public class SQLHelper extends SQLiteOpenHelper {
      * Inserção de usuário
      */
 
-    public boolean addUser(String nome, String sobrenome, String login, String senha) {
+    public int addUser(String nome, String sobrenome, String login, String senha) {
 
         /*
          * Configura o SQLITE para a escrita:
@@ -89,15 +89,17 @@ public class SQLHelper extends SQLiteOpenHelper {
             values.put("login", login);
             values.put("senha", senha);
 
-            sqLiteDatabase.insertOrThrow("tblUsuario", null, values);
+            int idUsuario = (int) sqLiteDatabase.insertOrThrow("tblUsuario", null, values);
+
             sqLiteDatabase.setTransactionSuccessful();
 
-            return true;
+            return idUsuario;
 
         } catch (Exception e) {
 
             Log.d("SQLite - ", e.getMessage());
-            return false;
+
+            return 0;
 
         } finally {
 
@@ -110,7 +112,6 @@ public class SQLHelper extends SQLiteOpenHelper {
 
     }
 
-
     public int getUser(String login, String senha) {
 
         /*
@@ -121,9 +122,9 @@ public class SQLHelper extends SQLiteOpenHelper {
 
         try (
                 Cursor cursor = SQLiteDatabase.rawQuery(
-                "select idUsuario from tblUsuario where login = '" + login + "'" +
-                        " and senha = '" + senha + "'"
-                , null)) {
+                        "select idUsuario from tblUsuario where login = '" + login + "'" +
+                                " and senha = '" + senha + "'"
+                        , null)) {
 
 
             cursor.moveToFirst();
