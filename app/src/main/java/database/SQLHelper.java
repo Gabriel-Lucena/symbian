@@ -59,7 +59,9 @@ public class SQLHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE tblEndereco" +
                 "(idEndereco INTEGER PRIMARY KEY," +
                 "idUsuario INTEGER," +
-                "cep TEXT, numero INTEGER, complemento TEXT," +
+                "cep TEXT," +
+                "numero INTEGER," +
+                "complemento TEXT," +
                 "FOREIGN KEY (idUsuario) REFERENCES tblUsuario (idUsuario))");
 
         Log.d("SQLite - ", "banco de dados criado! - " + DB_VERSION);
@@ -125,8 +127,6 @@ public class SQLHelper extends SQLiteOpenHelper {
 
 
             cursor.moveToFirst();
-
-            cursor.close();
 
             return Integer.parseInt(cursor.getString(0));
 
