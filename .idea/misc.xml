@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/layout/activity_cadastro_endereco.xml" value="0.15172101449275363" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.1" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/layout/activity_login_usuario.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_cadastro_endereco.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.515625" />
       </map>

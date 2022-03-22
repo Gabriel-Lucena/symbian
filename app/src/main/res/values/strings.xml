@@ -26,5 +26,8 @@
     <string name="LoginUsuario_login">Login</string>
     <string name="LoginUsuario_senha">Senha</string>
     <string name="LoginUsuario_buttonLogar">Entrar</string>
+    <string name="preencha_todos_os_campos">Preencha todos os campos!</string>
+    <string name="LoginUsuario_mensagem">Você está logando em um usuário!</string>
+    <string name="LoginUsuario_logar">Entrar</string>
 
 </resources>
