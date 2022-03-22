@@ -1,5 +1,6 @@
 package com.example.symbian;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -25,6 +26,10 @@ public class LoginUsuario extends AppCompatActivity {
         txtSenhaUsuario = findViewById(R.id.LoginUsuario_txtSenha);
         btnLogarUsuario = findViewById(R.id.LoginUsuario_btnLogar);
 
+        /*
+         * Listener
+         */
+
         btnLogarUsuario.setOnClickListener(view -> {
 
             if (validate()) {
@@ -35,14 +40,51 @@ public class LoginUsuario extends AppCompatActivity {
 
             } else {
 
-                Intent activityCadastroEndereco = new Intent(this, CadastroEndereco.class);
-                startActivity(activityCadastroEndereco);
 
+                AlertDialog dialog = new AlertDialog.Builder(this)
+                        .setTitle(getString(R.string.LoginUsuario_titulo))
+                        .setMessage(getString(R.string.LoginUsuario_mensagem))
+                        .setPositiveButton(R.string.LoginUsuario_logar, (dialog1, which) -> {
+
+                            /*
+                             * Ação do botão positivo
+                             */
+
+                            String loginUsuario = txtLoginUsuario.getText().toString();
+                            String senhaUsuario = txtSenhaUsuario.getText().toString();
+
+                            int idUsuario = SQLHelper.getINSTANCE(this).logarUser(loginUsuario, senhaUsuario);
+
+                            if (idUsuario > 0) {
+
+                                Intent activityCadastroEndereco = new Intent(this, CadastroEndereco.class);
+                                activityCadastroEndereco.putExtra("idUsario", idUsuario);
+                                startActivity(activityCadastroEndereco);
+
+                            } else {
+
+                                Toast.makeText(this,
+                                        "Não deu",
+                                        Toast.LENGTH_LONG).show();
+
+                                Intent activityCadastroUsuario = new Intent(this, CadastroUsuario.class);
+                                startActivity(activityCadastroUsuario);
+
+                            }
+
+                        }).setNegativeButton(getString(R.string.CadastroUsuario_cancelarInsercao), (dialog1, which) -> {
+
+                            /*
+                             * Ação do negative button
+                             */
+
+                        }).create();
+
+                dialog.show();
 
             }
 
         });
-
 
     }
 

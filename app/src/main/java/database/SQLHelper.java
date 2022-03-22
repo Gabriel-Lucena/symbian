@@ -1,5 +1,6 @@
 package database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -78,10 +79,10 @@ public class SQLHelper extends SQLiteOpenHelper {
          * Configura o SQLITE para a escrita:
          */
 
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        SQLiteDatabase SQLiteDatabase = getWritableDatabase();
 
         try {
-            sqLiteDatabase.beginTransaction();
+            SQLiteDatabase.beginTransaction();
             ContentValues values = new ContentValues();
 
             values.put("nome", nome);
@@ -89,47 +90,11 @@ public class SQLHelper extends SQLiteOpenHelper {
             values.put("login", login);
             values.put("senha", senha);
 
-            int idUsuario = (int) sqLiteDatabase.insertOrThrow("tblUsuario", null, values);
+            int idUsuario = (int) SQLiteDatabase.insertOrThrow("tblUsuario", null, values);
 
-            sqLiteDatabase.setTransactionSuccessful();
+            SQLiteDatabase.setTransactionSuccessful();
 
             return idUsuario;
-
-        } catch (Exception e) {
-
-            Log.d("SQLite - ", e.getMessage());
-
-            return 0;
-
-        } finally {
-
-            if (sqLiteDatabase.isOpen()) {
-
-                sqLiteDatabase.endTransaction();
-
-            }
-        }
-
-    }
-
-    public int getUser(String login, String senha) {
-
-        /*
-         * Configurando o SQLITE para a escrita:
-         */
-
-        SQLiteDatabase SQLiteDatabase = getReadableDatabase();
-
-        try (
-                Cursor cursor = SQLiteDatabase.rawQuery(
-                        "select idUsuario from tblUsuario where login = '" + login + "'" +
-                                " and senha = '" + senha + "'"
-                        , null)) {
-
-
-            cursor.moveToFirst();
-
-            return Integer.parseInt(cursor.getString(0));
 
         } catch (Exception e) {
 
@@ -144,10 +109,50 @@ public class SQLHelper extends SQLiteOpenHelper {
                 SQLiteDatabase.endTransaction();
 
             }
-
         }
 
     }
+
+
+    @SuppressLint("Range")
+    public int logarUser(String login, String senha) {
+
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM tblUsuario WHERE login = ? AND senha = ?", new String[]{login, senha});
+
+        try {
+
+            if (cursor.moveToFirst()) {
+
+                return cursor.getInt(cursor.getColumnIndex("idUsuario"));
+
+            }
+
+            return 0;
+
+        } catch (Exception e) {
+
+            Log.d("SQLITE-", e.getMessage());
+
+        } finally {
+
+            if (cursor != null && !cursor.isClosed()) {
+
+                cursor.close();
+
+            }
+
+        }
+
+        return 0;
+
+        /*
+         *  Fim do método de login
+         */
+
+    }
+
 
     /*
      * Inserção de endereços

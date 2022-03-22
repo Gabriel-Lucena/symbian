@@ -38,7 +38,7 @@ public class CadastroUsuario extends AppCompatActivity {
 
 
             if (validate()) {
-                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.preencha_todos_os_campos), Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Deu bom", Toast.LENGTH_SHORT).show();
 
@@ -57,14 +57,10 @@ public class CadastroUsuario extends AppCompatActivity {
                             String loginUsuario = txtLoginUsuario.getText().toString();
                             String senhaUsuario = txtSenhaUsuario.getText().toString();
 
-                            boolean cadastrarUsuario = SQLHelper.getINSTANCE(this).addUser(nomeUsuario, sobrenomeUsuario, loginUsuario, senhaUsuario);
+                            int idUsuario = SQLHelper.getINSTANCE(this).addUser(nomeUsuario, sobrenomeUsuario, loginUsuario, senhaUsuario);
 
 
-//                            int idUsuario = SQLHelper.getINSTANCE(this).getUser(loginUsuario, senhaUsuario);
-
-                            int idUsuario = 1; // id de teste
-
-                            if (cadastrarUsuario) {
+                            if (idUsuario != 0) {
 
                                 Toast.makeText(this,
                                         getString(R.string.CadastroUsuario_insercao),
