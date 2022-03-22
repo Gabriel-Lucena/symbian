@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/drawable/background_button.xml" value="0.1365" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/drawable/background_input.xml" value="0.1365" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/drawable/ic_email.xml" value="0.1365" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/drawable/ic_keyboard_backspace.xml" value="0.1365" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/drawable/ic_lock.xml" value="0.1365" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/drawable/ic_user.xml" value="0.1365" />
         <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/layout/activity_cadastro_endereco.xml" value="0.15172101449275363" />
-        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.1" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.33" />
         <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/layout/activity_login_usuario.xml" value="0.22" />
+        <entry key="..\:/Users/Gabriel/StudioProjects/symbian/app/src/main/res/layout/activity_recycler_view_endereco.xml" value="0.15806159420289856" />
         <entry key="app/src/main/res/layout/activity_cadastro_endereco.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.515625" />
       </map>
