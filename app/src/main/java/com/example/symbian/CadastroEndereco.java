@@ -3,6 +3,8 @@ package com.example.symbian;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,6 +18,9 @@ public class CadastroEndereco extends AppCompatActivity {
     private EditText txtNumero;
     private EditText txtComplemento;
     private Button btnCadastrarEndereco;
+    private ImageView toolbar_menu;
+    private ImageView toolbar_back;
+    private TextView toolbar_about;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +32,15 @@ public class CadastroEndereco extends AppCompatActivity {
         txtComplemento = findViewById(R.id.CadastroEndereco_txtComplemento);
 
         /*
-         * Listener
+         * Toolbar
+         */
+
+        toolbar_back = findViewById(R.id.toolbar_back);
+        toolbar_menu = findViewById(R.id.toolbar_menu);
+        toolbar_about = findViewById(R.id.toolbar_about);
+
+        /*
+         * Listeners
          */
 
         btnCadastrarEndereco = findViewById(R.id.CadastroEndereco_btnCadastrar);
@@ -68,6 +81,20 @@ public class CadastroEndereco extends AppCompatActivity {
             }
 
         });
+
+        toolbar_menu.setOnClickListener(view -> {
+
+        });
+
+        toolbar_back.setOnClickListener(view -> {
+
+        });
+
+
+        toolbar_about.setOnClickListener(view -> {
+
+        });
+
     }
 
     private boolean validate() {
